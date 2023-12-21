@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Leaflet Map</title>
+    <link rel="stylesheet" href="map.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIp\
+  tF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+</head>
+<body>
+  <header>
+    <h1>LEAFLET MAP SHOWING JKUAT SIGNPOSTS BETWEEN ASSEMBLY HALL AND GATE B</h1>
+    <nav>
+        <a href="map.html">Home</a>
+        <a href="list.html">About</a>
+    </nav>
+</header>
+    <script
+  src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiU\
+TtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+    <div id="map" style="width: auto; height: 800px;"></div>
+
+    <script>
+        var map = L.map('map').setView([-1.096033000, 37.017000000], 25);
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+          
+            var signs = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-symbol": "",
+        "name": "001",
+        "size": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014808000,
+        -1.095937000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "JKUAT MAP",
+        "size": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014719000,
+        -1.096007000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Welfare Street",
+        "size": 32
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014746000,
+        -1.095954000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "COETEC Admin Block",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014643000,
+        -1.095589000
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Chancellor's Court",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014433000,
+        -1.095405000	
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Former COHRED",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014271000,
+        -1.095349000		
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "CLB",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.014716000,
+        -1.095163000			
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Welfare Street",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.015564000,
+        -1.095234000				
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 3",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.016391000,
+        -1.095275000					
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 1",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.016733000,
+        -1.095247000						
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 4",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017059000,
+        -1.095293000							
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 2",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017283000,
+        -1.095266000								
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 5",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017633000,
+        -1.095285000									
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 2 Floodlight",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017720000,
+        -1.095023000										
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": " ",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 4 Router",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017344000,
+        -1.095786000											
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Street Lamp",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017375000,
+        -1.095808000												
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": " ",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Sumitomo Router1",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.017000000,
+        -1.096033000													
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": " ",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Sumitomo Router2",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.016644000,
+        -1.096009000														
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": " ",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Hall 3 Router",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.016336000,
+        -1.095651000															
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Tennis Parking",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.016197000,
+        -1.095961000																
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "light": "Not Lit",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Assembly Hall",
+        "size": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        37.015150000,
+        -1.095850000																	
+        ]
+      }
+    },
+  ]
+};
+//var placesLeaflet = L.geoJson(signs).addTo(map);
+var icon = L.icon({
+iconUrl: 'signpost.png',
+iconSize: [48, 48],
+});
+function createCustomIcon (signs, latlng) {
+  let myIcon = L.icon({
+    iconUrl: 'signpost.png',
+    iconSize:     [20, 20], // width and height of the image in pixels
+    iconAnchor:   [12, 12], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+  })
+  return L.marker(latlng, { icon: myIcon }).bindPopup("Name: " + signs.properties.name + "   Lighting: " + signs.properties.light).on('mouseover', function (e) {
+            this.openPopup().on('mouseout', function (e) {
+            this.closePopup()
+        });
+        });
+}
+
+// create an options object that specifies which function will called on each feature
+let myLayerOptions = {
+  pointToLayer: createCustomIcon
+}
+
+// create the GeoJSON layer
+L.geoJSON(signs, myLayerOptions).addTo(map)
+
+    </script>
+    <p>The signposts we picked are displayed with black icons. Hovering the mouse over them reveals their attributes</p>
+    <footer>
+      <div class="footer">
+        <div class="contain">
+          <div>
+            <p>The signposts we picked are displayed as black icons. Hovering the mouse over them reveals their attributes. Below are the group members.</p>
+          </div>
+        <div class="col">
+          <ul>
+            <li>GROUP MEMBERS:</li>
+            <li>ENC222-0146/2019    ELKANA KIPRUTO</li>
+            <li>ENC222-0154/2019    MARVIN SAKALI</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>                                   </li>
+            <li>                                   </li>
+            <li>                                   </li>
+            <li>ENC222-0146/2019    ELKANA KIPRUTO</li>
+            <li>ENC222-0154/2019    MARVIN SAKALI</li>
+          </ul>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+      </div>
+    </footer>
+</body>
+</html>
